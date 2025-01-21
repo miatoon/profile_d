@@ -1,0 +1,1 @@
+alias pmulti='multi -p'
