@@ -1,4 +1,4 @@
-which gcloud >/dev/null
+which gcloud >& /dev/null
 if [ $? -eq 0 ]; then
     alias gcloudi='gcloud beta interactive --context="gcloud "'
     alias gcloud-sdk-root='gcloud --quiet info --format="value(installation.sdk_root)"'

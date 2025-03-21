@@ -1,3 +1,5 @@
+# TODO Rename this file "python.sh"
+
 function pipenv-activate() {
     local venv_path="$(pipenv --venv | tr -d '\r')"
     if [ -z "${venv_path}" ]; then
@@ -9,6 +11,7 @@ function pipenv-activate() {
     fi
     if [[ "${OS}" =~ "Windows" ]] ; then
         venv_path=$(cygpath "${venv_path}")
+        # TODO execute the script to fix the windows activate script
         source "${venv_path}"/Scripts/activate
     else
         source "${venv_path}"/bin/activate

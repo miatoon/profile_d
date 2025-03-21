@@ -1,10 +1,16 @@
 if [[ "${OS}" =~ "Windows" ]] ; then
     # Comparison, using Devart Code-Compare
-    alias cc='/c/Program\ Files/Code\ Compare/CodeCompare.exe'
+    if [ -f "/c/Program\ Files/Code\ Compare/CodeCompare.exe" ]; then
+        alias cc='"/c/Program\ Files/Code\ Compare/CodeCompare.exe"'
+    fi
 
     # # Comparison, using WinMerge
-    # alias wm='/c/Program\ Files/WinMerge/WinMergeU.exe'
+    if [ -f "/c/Program Files/WinMerge/WinMergeU.exe" ]; then
+        alias wm='"/c/Program Files/WinMerge/WinMergeU.exe"'
+    fi
 
     # # Comparison, using Beyond Compare
-    # alias bc='/c/Program Files/Beyond Compare 4/BCompare.exe'
+    if [ -f "/c/Program Files/Beyond Compare 4/BCompare.exe" ]; then
+        alias bc='"/c/Program Files/Beyond Compare 4/BCompare.exe"'
+    fi
 fi

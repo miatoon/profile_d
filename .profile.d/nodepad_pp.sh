@@ -1,3 +1,5 @@
 if [[ "${OS}" =~ "Windows" ]] ; then
-    alias npp='"/C/Program Files/Notepad++/notepad++.exe"'
+    if [ -f "/c/Program Files/Notepad++/notepad++.exe" ]; then
+        alias npp='"/c/Program Files/Notepad++/notepad++.exe"'
+    fi
 fi

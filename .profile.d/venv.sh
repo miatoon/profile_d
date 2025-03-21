@@ -1,4 +1,5 @@
-function _venv-activate() { 
+# TODO Rename this file "python.sh"
+function venv-activate() {
     local venv_path="$1"
     if [ -z "${venv_path}" ]; then
         echo >&2 "Error: The path \"${venv_path}\" is unreachable!"
@@ -13,9 +14,11 @@ function _venv-activate() {
     source "${venv_path}"/Scripts/activate
 }
 
-function venv-activate-bin() {
-    _venv-activate "C:\Users\thoudayer\bin\.venv-home-bin"
-}
+if [ -d ~/bin/.venv-home-bin ]; then
+    function venv-activate-home-bin() {
+        venv-activate "C:\Users\thoudayer\bin\.venv-home-bin"
+    }
+fi
 
 # Bash completion (using the "tab" key) is extremely slow to find the
 # 'deactivate' command. This function is a workaround.
