@@ -5,8 +5,11 @@ set bell-style none
 "\e[1;5C": forward-word   # ctrl + right
 "\e[1;5D": backward-word  # ctrl + left 
 
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
+# For PuTTY
+"\e[1~": beginning-of-line # HOME key
+"\e[4~": end-of-line       # END key
+"\e\e[C": forward-word     # alt + right
+"\e\e[D": backward-word    # alt + left
 "\e[7~": beginning-of-line
 "\e[8~": end-of-line
 "\eOH": beginning-of-line
