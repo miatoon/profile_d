@@ -4,13 +4,15 @@ if [[ "${OS}" =~ "Windows" ]] ; then
         alias cc='"/c/Program\ Files/Code\ Compare/CodeCompare.exe"'
     fi
 
-    # # Comparison, using WinMerge
+    # Comparison, using WinMerge
     if [ -f "/c/Program Files/WinMerge/WinMergeU.exe" ]; then
         alias wm='"/c/Program Files/WinMerge/WinMergeU.exe"'
     fi
 
-    # # Comparison, using Beyond Compare
-    if [ -f "/c/Program Files/Beyond Compare 4/BCompare.exe" ]; then
+    # Comparison, using Beyond Compare
+    if [ -f "/c/Program Files/Beyond Compare 5/BCompare.exe" ]; then
+        alias bc='"/c/Program Files/Beyond Compare 5/BCompare.exe"'
+    elif [ -f "/c/Program Files/Beyond Compare 4/BCompare.exe" ]; then
         alias bc='"/c/Program Files/Beyond Compare 4/BCompare.exe"'
     fi
 fi
