@@ -38,7 +38,7 @@ function run-ssh-agent() {
     _is-ssh-agent-running
     if [[ $? == 0 ]]; then
         # Need to start a new agent
-        ssh-agent -t 11h > ~/.ssh/ssh-agent
+        ssh-agent -t ${SSH_AGENT_LIFETIME:-2h} > ~/.ssh/ssh-agent
     fi
     eval-ssh-agent
 }
