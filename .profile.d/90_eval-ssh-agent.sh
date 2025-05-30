@@ -1,5 +1,5 @@
 function _add-ssh-key-if-needed() {
-    local key_path=${HOME}/.ssh/ed25519
+    local key_path=${HOME}/.ssh/id_ed25519
     local is_key_need_to_be_added=1
     ssh-add -l >& /dev/null
     [ $? -eq 0 ] && is_key_need_to_be_added=0
