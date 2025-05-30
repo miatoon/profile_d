@@ -19,4 +19,4 @@ function _find-file-and-delete() {
 }
 
 alias find-and-delete-dirs-caches='_find-dir-and-delete "__pycache__" ".pytest_cache" ".mypy_cache" ".ruff_cache" ".cache"'
-alias find-and-delete-files-dumps='_find-file-and-delete "coredump_*.7z"
+alias find-and-delete-files-dumps='_find-file-and-delete "coredump_*.7z"'
