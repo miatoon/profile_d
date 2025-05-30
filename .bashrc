@@ -1,1 +1,1 @@
-test -f ~/.ssh/agent_session  && source ~/.ssh/agent_session >/dev/null
+test -f ~/.ssh/ssh-agent  && source ~/.ssh/ssh-agent >/dev/null
