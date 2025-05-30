@@ -4,8 +4,10 @@
 
 alias grep='grep --color=auto --exclude-dir={.svn,.git}'
 alias egrep='egrep --color=auto --exclude-dir={.svn,.git}'
-alias fgrep='fegrep --color=auto --exclude-dir={.svn,.git}'
+alias fgrep='fgrep --color=auto --exclude-dir={.svn,.git}'
 alias hgrep='history | grep --color=auto'
+alias vgrep='env | sort | grep --color=auto'
+alias agrep='alias | grep --color=auto'
 
 function pygrep() {
     folder=${1:-.}
