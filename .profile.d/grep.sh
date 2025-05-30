@@ -14,3 +14,9 @@ function pygrep() {
     test -d "${folder}" && shift || folder=.
     find "${folder}" -name "*.py" | xargs grep --color=auto "$@"
 }
+
+function groovygrep() {
+    folder=${1:-.}
+    test -d "${folder}" && shift || folder=.
+    find "${folder}" -name "*.groovy" | xargs grep --color=auto "$@"
+}
