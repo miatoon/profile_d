@@ -1,4 +1,3 @@
-# TODO Rename this file "python.sh"
 function venv-activate() {
     local venv_path="$1"
     if [ -z "${venv_path}" ]; then
@@ -11,7 +10,6 @@ function venv-activate() {
     else
         source "${venv_path}"/bin/activate
     fi
-    source "${venv_path}"/Scripts/activate
 }
 
 if [ -d "${HOME}/bin/.venv-home-bin" ]; then
