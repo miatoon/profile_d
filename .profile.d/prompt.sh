@@ -8,3 +8,5 @@ export PS1="\\[\\e[36m\\]\\u@\\h \\[\\e[33m\\]\\w\\[\\e[0m\\] "
 
 # Mixing the git_prompt and the venv prompt
 export PROMPT_COMMAND="${PROMPT_COMMAND}${PROMPT_COMMAND+;}"'__git_ps1 "${VIRTUAL_ENV_PROMPT}'${PS1%???}'" "\n\$ "'
+
+export PS4='${BASH_SOURCE[0]##*/}:${LINENO}: ${FUNCNAME[0]:-main}() + '
