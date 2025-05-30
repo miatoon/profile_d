@@ -5,18 +5,18 @@ function venv-activate() {
         echo >&2 "Error: The path \"${venv_path}\" is unreachable!"
         return 2
     fi
-    # if [[ "${OS}" =~ "Windows" ]] ; then
-    #     venv_path=$(cygpath "${venv_path}")
-    #     source "${venv_path}"/Scripts/activate
-    # else
-    #     source "${venv_path}"/bin/activate
-    # fi
+    if [[ "${OS}" =~ "Windows" ]] ; then
+        venv_path=$(cygpath "${venv_path}")
+        source "${venv_path}"/Scripts/activate
+    else
+        source "${venv_path}"/bin/activate
+    fi
     source "${venv_path}"/Scripts/activate
 }
 
-if [ -d ~/bin/.venv-home-bin ]; then
+if [ -d "${HOME}/bin/.venv-home-bin" ]; then
     function venv-activate-home-bin() {
-        venv-activate "C:\Users\thoudayer\bin\.venv-home-bin"
+        venv-activate "${HOME}\bin\.venv-home-bin"
     }
 fi
 
