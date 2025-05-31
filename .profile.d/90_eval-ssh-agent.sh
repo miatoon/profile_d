@@ -29,7 +29,7 @@ function _eval-ssh-agent() {
     _is-ssh-agent-running
     if [[ $? == 1 ]]; then
         # An agent is running
-        eval $(cat ~/.ssh/ssh-agent) >/dev/null
+        source ~/.ssh/ssh-agent
         _add-ssh-key-if-needed
     fi
 }
