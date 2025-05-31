@@ -25,7 +25,7 @@ function _is-ssh-agent-running() {
     return 0
 }
 
-function eval-ssh-agent() {
+function _eval-ssh-agent() {
     _is-ssh-agent-running
     if [[ $? == 1 ]]; then
         # An agent is running
@@ -40,7 +40,7 @@ function run-ssh-agent() {
         # Need to start a new agent
         ssh-agent -t ${SSH_AGENT_LIFETIME:-2h} > ~/.ssh/ssh-agent
     fi
-    eval-ssh-agent
+    _eval-ssh-agent
 }
 
-eval-ssh-agent
+_eval-ssh-agent
