@@ -6,7 +6,11 @@ function _add-ssh-key-if-needed() {
 
     if [ ${is_key_need_to_be_added} -eq 1 ]; then
         ssh-add "${key_path}"
+        # Key was added || Key wasn't added
+        [ $? -eq 0 ] && return 0 || return 1
     fi
+    # Key already present
+    return 0
 }
 
 function _is-ssh-agent-running() {
@@ -31,6 +35,13 @@ function _eval-ssh-agent() {
         # An agent is running
         source ~/.ssh/ssh-agent
         _add-ssh-key-if-needed
+        if [[ $? != 0 ]]; then
+            # No key added, kill the agent instead of keeping it running for nothing.
+            echo "No key added, killing the current agent..."
+            ssh-agent -k > ~/.ssh/ssh-agent
+            source ~/.ssh/ssh-agent
+            rm -f ~/.ssh/ssh-agent
+        fi
     fi
 }
 
